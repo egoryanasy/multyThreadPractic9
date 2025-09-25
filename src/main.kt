@@ -185,14 +185,9 @@ private fun seventh() {
     chiefThread.interrupt()
     chiefThread.join()
 }
-fun main(){
-//    first()
-//    second()
-//    third()
-//    fourth()
-//    fifth()
-//    sixth()
-//    seventh()
+
+@poyasnenie("Гоночка потоков с заведомо нечестными условиями")
+private fun eighth() {
     val sizeOfarray = 10
     val arrayFinish = mutableListOf<String>()
     val runners: Array<Thread> = Array(sizeOfarray) { index ->
@@ -203,7 +198,7 @@ fun main(){
             println("$index прибыл (время: $runTime мс)")
             synchronized(arrayFinish) {   // синхронизация, чтобы потоки не писали одновременно
                 if (arrayFinish.size < 3) {
-                    arrayFinish += "$index прибыл (место №${arrayFinish.size+1})"
+                    arrayFinish += "$index прибыл (место №${arrayFinish.size + 1})"
                 }
             }
         }
@@ -214,12 +209,19 @@ fun main(){
     arrayFinish.forEach {
         println(it)
     }
-
-
-
-
-
 }
+fun main(){
+    first()
+    second()
+    third()
+    fourth()
+    fifth()
+    sixth()
+    seventh()
+    eighth()
+}
+
+
 
 
 
