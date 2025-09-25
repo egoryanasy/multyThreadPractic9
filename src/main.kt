@@ -210,6 +210,7 @@ private fun eighth() {
         println(it)
     }
 }
+
 fun main(){
     first()
     second()
@@ -220,14 +221,3 @@ fun main(){
     seventh()
     eighth()
 }
-
-
-
-
-
-
-
-
-
-
-
